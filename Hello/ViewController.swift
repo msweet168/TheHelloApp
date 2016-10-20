@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         Bundle.main.path(forResource: "Hello", ofType: "txt")!)
     var helloArray = [String]()
     var theArray = [String]()
+    var todaysDate = String()
     
     @IBOutlet var theLabel:UILabel!
     
@@ -22,6 +23,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let date = NSDate()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        todaysDate = formatter.string(from: date as Date)
+        print(todaysDate)
         
         initArray()
         
@@ -56,19 +62,25 @@ class ViewController: UIViewController {
             UserDefaults.standard.set(helloShuffle, forKey: "saveArray")
             theArray = helloShuffle
             print(helloShuffle)
+            
+            UserDefaults.standard.set(todaysDate, forKey: "saveDate")
         }
         
         
         showHello()
-        //print(getArchived())
         
     }
     
     func showHello() {
         
+    
+        if UserDefaults.standard.string(forKey: "saveDate")! != todaysDate{
+            advanceArray()
+            UserDefaults.standard.set(todaysDate, forKey: "saveDate")
+            print("Next day, advanceing array...")
+        }
+        
         theLabel.text = theArray[0]
-        theArray.remove(at: 0)
-        UserDefaults.standard.set(theArray, forKey: "saveArray")
         
         
     }
@@ -77,13 +89,16 @@ class ViewController: UIViewController {
         return UserDefaults.standard.array(forKey: "archiveArray") as! [String]
     }
     
+    func advanceArray() {
+        theArray.remove(at: 0)
+        UserDefaults.standard.set(theArray, forKey: "saveArray")
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 
 }
 
