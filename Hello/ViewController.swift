@@ -22,8 +22,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        helloArray = helloString.components(separatedBy: "\n")
-        helloArray.remove(at: 0)
         
         initArray()
         
@@ -32,7 +30,7 @@ class ViewController: UIViewController {
     
     func initArray() {
         
-        if let savedArray = UserDefaults.standard.array(forKey: "array1") {
+        if let savedArray = UserDefaults.standard.array(forKey: "saveArray") {
             print("Not first launch, pulling array...")
             
             theArray = savedArray as! [String]
@@ -40,6 +38,11 @@ class ViewController: UIViewController {
         }
         else {
             print("First launch, shuffleing array...")
+            
+            helloArray = helloString.components(separatedBy: "\n")
+            helloArray.remove(at: 0)
+            helloArray.removeSubrange(helloArray.count-2..<helloArray.count)
+            
             
             var helloShuffle = [String]()
             
@@ -49,13 +52,15 @@ class ViewController: UIViewController {
                 
             }
             
-            UserDefaults.standard.set(helloShuffle, forKey: "array1")
+            UserDefaults.standard.set(helloShuffle, forKey: "archiveArray")
+            UserDefaults.standard.set(helloShuffle, forKey: "saveArray")
             theArray = helloShuffle
-            
+            print(helloShuffle)
         }
         
         
         showHello()
+        //print(getArchived())
         
     }
     
@@ -63,11 +68,14 @@ class ViewController: UIViewController {
         
         theLabel.text = theArray[0]
         theArray.remove(at: 0)
-        UserDefaults.standard.set(theArray, forKey: "array1")
+        UserDefaults.standard.set(theArray, forKey: "saveArray")
         
         
     }
     
+    func getArchived() -> [String]{
+        return UserDefaults.standard.array(forKey: "archiveArray") as! [String]
+    }
     
 
     override func didReceiveMemoryWarning() {
