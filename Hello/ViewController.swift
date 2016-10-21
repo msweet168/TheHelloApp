@@ -8,6 +8,33 @@
 
 import UIKit
 
+extension UIColor {
+    class var redCode: UIColor {
+        return UIColor(red: 0/255, green: 122/255, blue: 255/255, alpha: 1)
+    }
+    class var liGreenCode: UIColor {
+        return #colorLiteral(red: 0.6745098039, green: 0.9450980392, blue: 0.6235294118, alpha: 1)
+    }
+    class var liPurpleCode: UIColor {
+        return #colorLiteral(red: 0.7803921569, green: 0.7921568627, blue: 0.9098039216, alpha: 1)
+    }
+    class var yellowCode: UIColor {
+        return #colorLiteral(red: 0.9568627451, green: 0.8235294118, blue: 0.4588235294, alpha: 1)
+    }
+    class var tealCode: UIColor {
+        return #colorLiteral(red: 0.4235294118, green: 0.7098039216, blue: 0.6862745098, alpha: 1)
+    }
+    class var darkTealCode: UIColor {
+        return #colorLiteral(red: 0.3137254902, green: 0.5647058824, blue: 0.7529411765, alpha: 1)
+    }
+    class var pinkCode: UIColor {
+        return #colorLiteral(red: 0.8588235294, green: 0.3725490196, blue: 0.5764705882, alpha: 1)
+    }
+    class var liYellowCode: UIColor {
+        return #colorLiteral(red: 0.937254902, green: 0.9725490196, blue: 0.6784313725, alpha: 1)
+    }
+}
+
 class ViewController: UIViewController {
     
     let helloString = try! String(contentsOfFile:
@@ -15,6 +42,9 @@ class ViewController: UIViewController {
     var helloArray = [String]()
     var theArray = [String]()
     var todaysDate = String()
+    
+
+    
     
     @IBOutlet var theLabel:UILabel!
     
@@ -30,6 +60,7 @@ class ViewController: UIViewController {
         print(todaysDate)
         
         initArray()
+    
         
     }
     
@@ -71,6 +102,10 @@ class ViewController: UIViewController {
         
     }
     
+    @IBAction func testButton(sender:AnyObject) {
+        showHello()
+    }
+    
     func showHello() {
         
     
@@ -82,6 +117,9 @@ class ViewController: UIViewController {
         
         theLabel.text = theArray[0]
         
+        let randomColor: [UIColor] = [.redCode, .liGreenCode, .liPurpleCode, .yellowCode, .tealCode, .darkTealCode, .pinkCode, .liYellowCode]
+        let randomNumber = Int(arc4random_uniform(8))
+        theLabel.textColor = randomColor[randomNumber]
         
     }
     
@@ -99,6 +137,28 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    /*
+    
+    func info() {
+        
+        print("Settings")
+        var dailyNotifications = true
+        var helloStreak = "Day 8"
+        var usedQuotes = 10
+        var remainingQuotes = 1203
+        
+    }
+    
+    @IBAction func shareQuote(sender:Any){
+        
+    }
+    
+ */
+    
+    
+    
 
 }
 

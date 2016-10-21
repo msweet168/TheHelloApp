@@ -17,29 +17,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View 1" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzb-Vi-PWv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-d6-FFZ">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="2ft-Fn-fni"/>
-                                    <constraint firstAttribute="width" constant="202" id="anO-D6-TQm"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="A0C-zv-TaN"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="371" id="Jl8-nV-ldr"/>
+                                    <constraint firstAttribute="height" constant="27" id="QPt-z9-sPS"/>
+                                    <constraint firstAttribute="width" constant="228" id="rE8-FA-YGO"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="12"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="A0C-zv-TaN"/>
+                                        <exclude reference="Jl8-nV-ldr"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="QPt-z9-sPS"/>
+                                        <exclude reference="rE8-FA-YGO"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Closer" translatesAutoresizingMaskIntoConstraints="NO" id="gD8-0u-2sd">
+                                <frame key="frameInset" minX="16" minY="620" width="13" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-1K-UIi">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="InfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="NKm-mF-3tt">
+                                        <frame key="frameInset" minY="43" width="183" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="var notifications = true" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHZ-UE-xAq">
+                                        <frame key="frameInset" minX="8" minY="71" width="269" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="var helloStreak = &quot;Day 0&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dP-5k-Gy0">
+                                        <frame key="frameInset" minX="8" minY="110" width="271" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="var remainingQuotes = 0000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Cx-Le-IbZ">
+                                        <frame key="frameInset" minX="8" minY="149" width="282" height="41"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gjr-U5-wy1">
+                                        <frame key="frameInset" minX="222" minY="38" width="51" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="thumbTintColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Closer" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-lW-wke">
+                                        <frame key="frameInset" minX="1" minY="198" width="10" height="20"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="226" id="f2K-Q9-vD8"/>
+                                    <constraint firstAttribute="width" constant="285" id="vtm-2D-bAo"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Uzb-Vi-PWv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Wm3-DS-a9E"/>
-                            <constraint firstItem="Uzb-Vi-PWv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gSf-mS-8Ge"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="h2h-1K-UIi" secondAttribute="bottom" constant="77" id="5O3-xG-ras"/>
+                            <constraint firstItem="h2h-1K-UIi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RCX-dW-rKu"/>
+                            <constraint firstItem="byQ-d6-FFZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aai-bI-Cob"/>
+                            <constraint firstItem="byQ-d6-FFZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="mpL-Iv-a4s"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="theLabel" destination="Uzb-Vi-PWv" id="tiG-a4-nfE"/>
-                    </connections>
+                    <nil key="simulatedStatusBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="32.799999999999997" y="37.331334332833585"/>
+            <point key="canvasLocation" x="29.600000000000001" y="35.532233883058474"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Closer" width="21" height="45"/>
+        <image name="Header" width="368" height="45"/>
+        <image name="InfoHeader" width="368" height="45"/>
+    </resources>
 </document>
