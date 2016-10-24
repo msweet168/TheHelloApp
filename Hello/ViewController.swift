@@ -47,6 +47,10 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var theLabel:UILabel!
+    @IBOutlet var notificationSwitch:UISwitch!
+    @IBOutlet var notificationLabel:UILabel!
+    @IBOutlet var streakLabel:UILabel!
+    @IBOutlet var remainingQuotesLabel:UILabel!
     
 
     override func viewDidLoad() {
@@ -59,8 +63,12 @@ class ViewController: UIViewController {
         todaysDate = formatter.string(from: date as Date)
         print(todaysDate)
         
+        //theLabel.textColor = UIColor.redCode
+        
         initArray()
-    
+        
+        setLabelColors()
+        
         
     }
     
@@ -79,6 +87,8 @@ class ViewController: UIViewController {
             helloArray = helloString.components(separatedBy: "\n")
             helloArray.remove(at: 0)
             helloArray.removeSubrange(helloArray.count-2..<helloArray.count)
+            helloArray = helloArray.filter { $0 != "Hello Sarah, hello Kate, hello Patricia, hello Izzy, hello Camille, hello Anastasia, hello Vicky, hello Gigi, hello soul mate." }
+            
             
             
             var helloShuffle = [String]()
@@ -101,9 +111,22 @@ class ViewController: UIViewController {
         showHello()
         
     }
-    
+    var bool1 = true
     @IBAction func testButton(sender:AnyObject) {
+        
         showHello()
+        
+    }
+    
+    @IBAction func switchFlip(_ sender: UISwitch) {
+        
+        //Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(notificationsToggled), userInfo: nil, repeats: false)
+
+    }
+    
+    func notificationsToggled() {
+        notificationSwitch.thumbTintColor = notificationSwitch.isOn ? #colorLiteral(red: 0.1568624675, green: 0.1638166606, blue: 0.208099246, alpha: 1):#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
     }
     
     func showHello() {
@@ -115,7 +138,7 @@ class ViewController: UIViewController {
             print("Next day, advanceing array...")
         }
         
-        theLabel.text = theArray[0]
+        theLabel.text = "\"\(theArray[0])\""
         
         let randomColor: [UIColor] = [.redCode, .liGreenCode, .liPurpleCode, .yellowCode, .tealCode, .darkTealCode, .pinkCode, .liYellowCode]
         let randomNumber = Int(arc4random_uniform(8))
@@ -130,6 +153,32 @@ class ViewController: UIViewController {
     func advanceArray() {
         theArray.remove(at: 0)
         UserDefaults.standard.set(theArray, forKey: "saveArray")
+    }
+    
+    func setLabelColors() {
+        
+        let string1 = "var"
+        
+        let range = (notificationLabel.text! as NSString).range(of: string1)
+        let range11 = (streakLabel.text! as NSString).range(of: string1)
+        let range111 = (remainingQuotesLabel.text! as NSString).range(of: string1)
+        
+        
+        let attributedText = NSMutableAttributedString.init(string: notificationLabel.text!)
+        attributedText.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.7333333333, green: 0.07450980392, blue: 0.4823529412, alpha: 1) , range: range)
+        
+        let attributedText2 = NSMutableAttributedString.init(string: streakLabel.text!)
+        attributedText2.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.7333333333, green: 0.07450980392, blue: 0.4823529412, alpha: 1) , range: range11)
+        attributedText2.addAttribute(NSForegroundColorAttributeName, value: UIColor.red , range: NSRange(location: 18, length: (streakLabel.text?.characters.count)!-18))
+        
+        let attributedText3 = NSMutableAttributedString.init(string: remainingQuotesLabel.text!)
+        attributedText3.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.7333333333, green: 0.07450980392, blue: 0.4823529412, alpha: 1) , range: range111)
+        attributedText3.addAttribute(NSForegroundColorAttributeName, value: #colorLiteral(red: 0.4999950528, green: 0.4843581319, blue: 0.7445307374, alpha: 1) , range: NSRange(location: 22, length: (remainingQuotesLabel.text?.characters.count)!-22))
+    
+        notificationLabel.attributedText = attributedText
+        streakLabel.attributedText = attributedText2
+        remainingQuotesLabel.attributedText = attributedText3
+        
     }
     
 
