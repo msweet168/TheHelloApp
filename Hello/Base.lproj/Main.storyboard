@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BLy-hV-k72">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BLy-hV-k72">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,6 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NyB-em-pEW">
+                                <rect key="frame" x="28" y="150" width="319" height="367"/>
                                 <string key="text">Technology is amazing. Hello Quotes show all the extraordinary things that it does to change our lives. 
 
 Come back here everyday for a new quote or turn on notifications to see your new quote on your lock screen each morning. </string>
@@ -32,11 +36,13 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Helloworld" translatesAutoresizingMaskIntoConstraints="NO" id="zxn-k1-4lO">
+                                <rect key="frame" x="62" y="20" width="251" height="42"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zxn-k1-4lO" secondAttribute="height" multiplier="251:42" id="9K0-nL-AcG"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGd-Yt-Obh">
+                                <rect key="frame" x="87.5" y="608" width="200" height="39"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="39" id="NqI-nw-HeV"/>
@@ -83,8 +89,10 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVe-Zy-maq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hello" translatesAutoresizingMaskIntoConstraints="NO" id="Z1k-cm-Bw3">
+                                        <rect key="frame" x="142" y="15" width="91" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Z1k-cm-Bw3" secondAttribute="height" multiplier="13:5" id="arL-wA-bu4"/>
                                         </constraints>
@@ -100,34 +108,38 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Hello Quote for 00/00/00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="5Jr-fI-l1x">
+                                <rect key="frame" x="30" y="115" width="315" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="5Jr-fI-l1x" secondAttribute="height" multiplier="15:1" id="Qtu-BN-G3x"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Sarah, hello Kate, hello Patricia, hello Izzy, hello Camille, hello Anastasia, hello Vicky, hello Gigi, hello soul mate." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pYq-Wc-jFz">
+                                <rect key="frame" x="44" y="144" width="288" height="270"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCy-UX-T8q">
+                                <rect key="frame" x="0.0" y="65" width="187" height="37"/>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="OYg-Kx-9BA"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Today's Quote">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNg-gK-iM9">
+                                <rect key="frame" x="188" y="65" width="187" height="37"/>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="u3j-Ky-hbm"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Favorite Quotes">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -136,12 +148,14 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1jb-OC-3Bh">
+                                <rect key="frame" x="0.0" y="500" width="375" height="2"/>
                                 <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="Afj-sc-Inv"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Streak: Day 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ue3-EO-Sse">
+                                <rect key="frame" x="69" y="526" width="238" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ue3-EO-Sse" secondAttribute="height" multiplier="17:2" id="HVP-RV-a8i"/>
                                 </constraints>
@@ -150,6 +164,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Quotes: 0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-4H-W8W">
+                                <rect key="frame" x="22" y="569" width="331" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ec3-4H-W8W" secondAttribute="height" multiplier="331:28" constant="-23.64285714285711" id="0dI-J2-i94"/>
                                 </constraints>
@@ -158,15 +173,17 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-9h-WWz">
+                                <rect key="frame" x="22" y="607" width="331" height="37"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-hW-Kzz">
-                                        <frame key="frameInset" minY="3" width="219" height="30"/>
+                                        <rect key="frame" x="0.0" y="3" width="219" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjQ-s9-fy5">
+                                        <rect key="frame" x="274" y="3" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="CZ3-Uj-L6U"/>
                                             <constraint firstAttribute="height" constant="31" id="sWF-k0-KER"/>
@@ -182,8 +199,10 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-KN-H7a">
+                                <rect key="frame" x="34.5" y="432" width="306" height="37"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0i-w5-xEc">
+                                        <rect key="frame" x="1" y="0.0" width="143" height="37"/>
                                         <color key="backgroundColor" red="0.84705882352941175" green="0.84705882352941175" blue="0.84705882352941175" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="37" id="Rfg-Oz-L2U"/>
@@ -198,6 +217,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-VT-Or8">
+                                        <rect key="frame" x="162" y="0.0" width="143" height="37"/>
                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="143" id="b1c-kz-Fa2"/>
@@ -222,7 +242,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2YG-Je-PFH">
-                                <frame key="frameInset" minX="165" minY="644" width="46" height="30"/>
+                                <rect key="frame" x="165" y="644" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -230,7 +250,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLS-7d-ysS">
-                                <frame key="frameInset" minX="228" minY="643" width="46" height="30"/>
+                                <rect key="frame" x="228" y="643" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -289,7 +309,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nfn-eS-HZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623.20000000000005" y="693.10344827586209"/>
+            <point key="canvasLocation" x="-623" y="693"/>
         </scene>
         <!--Favorite Quotes-->
         <scene sceneID="TNH-G7-HyD">
@@ -304,8 +324,10 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uD-er-Ahh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="65"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hello" translatesAutoresizingMaskIntoConstraints="NO" id="pXd-RE-0ek">
+                                        <rect key="frame" x="142" y="15" width="91" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="pXd-RE-0ek" secondAttribute="height" multiplier="13:5" id="sxf-m9-iPD"/>
                                         </constraints>
@@ -321,11 +343,12 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0f-uM-y9F">
+                                <rect key="frame" x="0.0" y="65" width="187" height="37"/>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="S2x-Ty-gMd"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Today's Quote">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -334,11 +357,12 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxg-cp-duO">
+                                <rect key="frame" x="188" y="65" width="187" height="37"/>
                                 <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="37" id="MPx-iX-Sx0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
                                 <state key="normal" title="Favorite Quotes">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -347,56 +371,55 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0g0-9F-BrT">
-                                <frame key="frameInset" minX="164" minY="637" width="46" height="30"/>
+                                <rect key="frame" x="164" y="637" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to remove" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-2s-6bL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to remove, tap to share." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-2s-6bL">
+                                <rect key="frame" x="16" y="110" width="343" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="hJf-2s-6bL" secondAttribute="height" multiplier="76:7" id="6w8-rr-a2N"/>
+                                    <constraint firstAttribute="width" secondItem="hJf-2s-6bL" secondAttribute="height" multiplier="76:7" constant="115" id="6w8-rr-a2N"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZd-ze-7QL">
+                                <rect key="frame" x="16" y="139" width="343" height="490"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favCell" textLabel="Ur6-iw-kY8" rowHeight="101" style="IBUITableViewCellStyleDefault" id="teH-Gg-STX">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="101"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="teH-Gg-STX" id="t0Q-i5-mp1">
-                                            <frame key="frameInset" width="343" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ur6-iw-kY8">
-                                                    <frame key="frameInset" minX="15" width="313" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Xec-Ae-qDl" id="JcD-aS-LyC"/>
+                                    <outlet property="delegate" destination="Xec-Ae-qDl" id="Rdp-TS-Rbj"/>
+                                </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By Mitchell Sweet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNR-gx-4dS">
+                                <rect key="frame" x="47" y="637" width="280" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="d15-ug-mgj"/>
+                                    <constraint firstAttribute="height" constant="21" id="oFO-YQ-crc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="dZd-ze-7QL" firstAttribute="leading" secondItem="s9A-Ml-TcF" secondAttribute="leadingMargin" id="2eo-3R-JNP"/>
                             <constraint firstItem="nxg-cp-duO" firstAttribute="height" secondItem="r0f-uM-y9F" secondAttribute="height" id="40b-dU-rdH"/>
-                            <constraint firstItem="hJf-2s-6bL" firstAttribute="leading" secondItem="s9A-Ml-TcF" secondAttribute="leadingMargin" constant="57" id="41T-bf-igz"/>
+                            <constraint firstItem="hJf-2s-6bL" firstAttribute="leading" secondItem="s9A-Ml-TcF" secondAttribute="leadingMargin" id="41T-bf-igz"/>
                             <constraint firstItem="hJf-2s-6bL" firstAttribute="top" secondItem="nxg-cp-duO" secondAttribute="bottom" constant="8" id="57f-rU-PdB"/>
                             <constraint firstItem="nxg-cp-duO" firstAttribute="top" secondItem="5uD-er-Ahh" secondAttribute="bottom" id="ADK-Ps-0Lc"/>
                             <constraint firstItem="nxg-cp-duO" firstAttribute="leading" secondItem="r0f-uM-y9F" secondAttribute="trailing" constant="1" id="EJB-3e-u7T"/>
                             <constraint firstItem="dZd-ze-7QL" firstAttribute="trailing" secondItem="s9A-Ml-TcF" secondAttribute="trailingMargin" id="HJF-3v-PAK"/>
+                            <constraint firstItem="r6o-Bx-tzD" firstAttribute="top" secondItem="rNR-gx-4dS" secondAttribute="bottom" constant="9" id="NUf-Hd-u2K"/>
                             <constraint firstItem="5uD-er-Ahh" firstAttribute="top" secondItem="8ga-uL-RTK" secondAttribute="bottom" id="Qny-EG-GeA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hJf-2s-6bL" secondAttribute="trailing" constant="58" id="UBL-sT-qdl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hJf-2s-6bL" secondAttribute="trailing" id="UBL-sT-qdl"/>
+                            <constraint firstItem="rNR-gx-4dS" firstAttribute="centerX" secondItem="s9A-Ml-TcF" secondAttribute="centerX" id="b6l-Nv-zA8"/>
                             <constraint firstItem="nxg-cp-duO" firstAttribute="width" secondItem="r0f-uM-y9F" secondAttribute="width" id="cIY-5K-YgB"/>
                             <constraint firstItem="dZd-ze-7QL" firstAttribute="top" secondItem="hJf-2s-6bL" secondAttribute="bottom" constant="8" id="cUq-lE-HDE"/>
                             <constraint firstAttribute="trailing" secondItem="nxg-cp-duO" secondAttribute="trailing" id="eUp-Wv-PHU"/>
-                            <constraint firstItem="r6o-Bx-tzD" firstAttribute="top" secondItem="dZd-ze-7QL" secondAttribute="bottom" constant="20" id="iDX-TS-7nB"/>
+                            <constraint firstItem="r6o-Bx-tzD" firstAttribute="top" secondItem="dZd-ze-7QL" secondAttribute="bottom" constant="38" id="iDX-TS-7nB"/>
                             <constraint firstItem="r0f-uM-y9F" firstAttribute="top" secondItem="5uD-er-Ahh" secondAttribute="bottom" id="mx1-Yb-Khv"/>
                             <constraint firstItem="5uD-er-Ahh" firstAttribute="leading" secondItem="s9A-Ml-TcF" secondAttribute="leading" id="wW2-vf-XGn"/>
                             <constraint firstAttribute="trailing" secondItem="5uD-er-Ahh" secondAttribute="trailing" id="yDj-wu-05T"/>
@@ -407,11 +430,12 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <outlet property="headerBar" destination="5uD-er-Ahh" id="i4h-kQ-gH9"/>
                         <outlet property="leftButton2" destination="r0f-uM-y9F" id="kM6-wX-Bp7"/>
                         <outlet property="rightButton2" destination="nxg-cp-duO" id="wzp-Qw-KYV"/>
+                        <outlet property="tableView" destination="dZd-ze-7QL" id="VBi-w4-eb7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBx-tH-tnp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61.600000000000001" y="692.20389805097454"/>
+            <point key="canvasLocation" x="24.800000000000001" y="691.304347826087"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -426,29 +450,36 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Closer" translatesAutoresizingMaskIntoConstraints="NO" id="gD8-0u-2sd">
+                                <rect key="frame" x="16" y="620" width="13" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="23L-aC-AxO"/>
                                     <constraint firstAttribute="height" constant="27" id="Md2-LH-vYh"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="h2h-1K-UIi">
+                                <rect key="frame" x="16" y="442" width="343" height="174"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InfoHeader" translatesAutoresizingMaskIntoConstraints="NO" id="TPv-4R-Rgg">
+                                        <rect key="frame" x="20" y="13" width="218" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="218" id="oIh-lY-OT5"/>
                                             <constraint firstAttribute="height" constant="24" id="qsm-Is-RZy"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="248" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="z9I-7j-oab">
+                                        <rect key="frame" x="40" y="45" width="283" height="95"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqD-pd-IYT">
+                                                <rect key="frame" x="0.0" y="0.0" width="283" height="31"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" text="var notifications = " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zfN-eb-wjg">
+                                                        <rect key="frame" x="0.0" y="5" width="217" height="21"/>
                                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaP-5n-pMl">
+                                                        <rect key="frame" x="217" y="0.0" width="51" height="31"/>
                                                         <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <color key="thumbTintColor" red="0.60392156862745094" green="0.23137254901960785" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
@@ -467,11 +498,13 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="var helloStreak = &quot;Day 0&quot;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="52A-tQ-wie">
+                                                <rect key="frame" x="0.0" y="42" width="283" height="21"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="var remainingQuotes = 0000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="imG-xN-fBf">
+                                                <rect key="frame" x="0.0" y="74" width="283" height="21"/>
                                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -479,6 +512,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         </subviews>
                                     </stackView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Closer" translatesAutoresizingMaskIntoConstraints="NO" id="YDw-IO-Q4T">
+                                        <rect key="frame" x="20" y="154" width="10" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="PCb-Pj-vsi"/>
                                             <constraint firstAttribute="width" constant="10" id="nKC-dV-70w"/>
@@ -497,14 +531,17 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5Tz-hT-rjf">
+                                <rect key="frame" x="36" y="55" width="298" height="383"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PrintOpen" translatesAutoresizingMaskIntoConstraints="NO" id="qNP-Ie-pSK">
+                                        <rect key="frame" x="8" y="8" width="89" height="27"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="89" id="Lwp-MV-Yd4"/>
                                             <constraint firstAttribute="height" constant="27" id="Rh9-Cf-5HM"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Hello Sarah, hello Kate, hello Patricia, hello Izzy, hello Camille, hello Anastasia, hello Vicky, hello Gigi, hello soul mate." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="bJb-Ga-TNJ">
+                                        <rect key="frame" x="8" y="125" width="282" height="133"/>
                                         <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -513,6 +550,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=")" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIC-UP-42d">
+                                        <rect key="frame" x="0.0" y="334" width="36" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="38j-uN-pee"/>
                                             <constraint firstAttribute="width" constant="36" id="f0a-G7-cxe"/>
@@ -535,6 +573,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Header" translatesAutoresizingMaskIntoConstraints="NO" id="byQ-d6-FFZ">
+                                <rect key="frame" x="16" y="20" width="228" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="A0C-zv-TaN"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="371" id="Jl8-nV-ldr"/>
@@ -555,13 +594,14 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </variation>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RXF-Ya-0XC">
+                                <rect key="frame" x="337" y="625" width="22" height="22"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Bnc-qS-gn3" kind="show" id="pcn-4j-Yv1"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaS-Ge-OKi">
-                                <frame key="frameInset" minX="29" minY="637" width="46" height="30"/>
+                                <rect key="frame" x="29" y="637" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
@@ -614,12 +654,14 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AboutHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Ncp-Ay-6Wz">
+                                <rect key="frame" x="16" y="20" width="242" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="27" id="cCc-HD-NmG"/>
                                     <constraint firstAttribute="width" constant="242" id="pLe-o0-DMj"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge3-II-INH">
+                                <rect key="frame" x="21" y="630" width="333" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ge3-II-INH" secondAttribute="height" multiplier="333:17" id="ayX-F4-fea"/>
                                 </constraints>
@@ -629,12 +671,14 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Closer" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-Hm-VVV">
+                                <rect key="frame" x="21" y="595" width="13" height="27"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="13" id="3pn-zY-0wU"/>
                                     <constraint firstAttribute="height" constant="27" id="y2V-7N-aiO"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="let developer = &quot;Mitchell Sweet&quot;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="az0-r1-8UD">
+                                <rect key="frame" x="11" y="318.5" width="353" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="az0-r1-8UD" secondAttribute="height" multiplier="353:30" id="8jm-bA-JhE"/>
                                 </constraints>
@@ -643,6 +687,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="let website = &quot;sweetdevelop.com&quot;" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yIH-48-qIe">
+                                <rect key="frame" x="11" y="356" width="353" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yIH-48-qIe" secondAttribute="height" multiplier="353:30" id="hdH-YY-UPg"/>
                                 </constraints>
@@ -651,6 +696,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalCompressionResistancePriority="749" text="let version = 1.0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-pg-G5b">
+                                <rect key="frame" x="11" y="280" width="353" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="8mQ-pg-G5b" secondAttribute="height" multiplier="353:30" id="ibL-n1-Mq3"/>
                                 </constraints>

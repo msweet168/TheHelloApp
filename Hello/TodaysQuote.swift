@@ -73,6 +73,11 @@ class TodaysQuote: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        initArray()
+    }
+    
+    
     func viewSetup() {
         self.topBar.backgroundColor = UIColor(red: 216/255, green: 216/255, blue: 216/255, alpha: 0.3)
         leftButton.layer.borderColor = UIColor.black.cgColor
@@ -103,11 +108,11 @@ class TodaysQuote: UIViewController {
         else {
             print("First launch, shuffleing array...")
             
-            UserDefaults.standard.set(false, forKey: "favorited")
+            //UserDefaults.standard.set(false, forKey: "favorited")
             UserDefaults.standard.set(1, forKey: "streak")
             //UserDefaults.standard.set(NSDate(), forKey: "lasttime")
             
-            var favArray = [""]
+            let favArray = [""]
             UserDefaults.standard.set(favArray, forKey: "favArray")
             
             helloArray = helloString.components(separatedBy: "\n")
@@ -165,10 +170,6 @@ class TodaysQuote: UIViewController {
         }
         
         
-        if UserDefaults.standard.bool(forKey: "favorited") {
-            disableFavoriteButton()
-        }
-        
         helloLabel.text = "\"\(theArray[0])\""
         remainingLabel.text = "Remaining Quotes: \(theArray.count)"
         streakLabel.text = "Quotes viewed: \(UserDefaults.standard.integer(forKey: "streak"))"
@@ -176,6 +177,8 @@ class TodaysQuote: UIViewController {
         let randomColor: [UIColor] = [.redCode1, .liGreenCode1, .liPurpleCode1, .yellowCode1, .tealCode, .darkTealCode1, .pinkCode, .liYellowCode1]
         let randomNumber = Int(arc4random_uniform(8))
         helloLabel.textColor = randomColor[randomNumber]
+        
+        checkFav()
         
     }
     
@@ -202,7 +205,7 @@ class TodaysQuote: UIViewController {
         favoriteButton.setTitle("Favorited", for: .normal)
         favoriteButton.layer.borderColor = UIColor.green.cgColor
         favoriteButton.layer.borderWidth = 1
-        UserDefaults.standard.set(true, forKey: "favorited")
+        //UserDefaults.standard.set(true, forKey: "favorited")
     }
     
     func undoFavorite() {
@@ -211,6 +214,19 @@ class TodaysQuote: UIViewController {
         favoriteButton.layer.borderColor = nil
         favoriteButton.layer.borderWidth = 0
         UserDefaults.standard.set(false, forKey: "favorited")
+        
+    }
+
+    
+    func checkFav() {
+        let favArray:[String] = UserDefaults.standard.array(forKey: "favArray") as! [String]
+        if favArray.contains(helloLabel.text!) {
+            disableFavoriteButton()
+        }
+        else
+        {
+            undoFavorite()
+        }
     }
     
     func shareQuote(quote: String) {
@@ -258,11 +274,11 @@ class TodaysQuote: UIViewController {
     @IBAction func favoriteButton(sender:AnyObject) {
         
         if let currentQuote = helloLabel.text {
-            addFavorite(quote: currentQuote)
+            //addFavorite(quote: currentQuote)
             disableFavoriteButton()
             
             let alert = UIAlertController(title: "Favorited", message: "Quote was added to favorites.", preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: {(alert: UIAlertAction!) in self.addFavorite(quote: currentQuote)})
             alert.addAction(defaultAction)
             let undoAction = UIAlertAction(title: "Undo", style: .destructive, handler: {(alert: UIAlertAction!) in self.undoFavorite()})
             alert.addAction(undoAction)
