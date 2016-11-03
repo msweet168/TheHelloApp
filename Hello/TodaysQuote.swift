@@ -42,6 +42,7 @@ class TodaysQuote: UIViewController {
     var helloArray = [String]()
     var theArray = [String]()
     var todaysDate = String()
+    var differenceDate = NSDate()
     
     
     @IBOutlet var helloLabel:UILabel!
@@ -52,6 +53,8 @@ class TodaysQuote: UIViewController {
     @IBOutlet var leftButton:UIButton!
     @IBOutlet var rightButton:UIButton!
     @IBOutlet var shareButton:UIButton!
+    @IBOutlet var streakLabel:UILabel!
+    @IBOutlet var remainingLabel:UILabel!
     
     
     override func viewDidLoad() {
@@ -95,9 +98,17 @@ class TodaysQuote: UIViewController {
             
             theArray = savedArray as! [String]
             
+            
         }
         else {
             print("First launch, shuffleing array...")
+            
+            UserDefaults.standard.set(false, forKey: "favorited")
+            UserDefaults.standard.set(1, forKey: "streak")
+            //UserDefaults.standard.set(NSDate(), forKey: "lasttime")
+            
+            var favArray = [""]
+            UserDefaults.standard.set(favArray, forKey: "favArray")
             
             helloArray = helloString.components(separatedBy: "\n")
             helloArray.remove(at: 0)
@@ -139,12 +150,28 @@ class TodaysQuote: UIViewController {
         
         
         if UserDefaults.standard.string(forKey: "saveDate")! != todaysDate{
-            advanceArray()
+            
+            advanceArray(advances: 1)
+            //advanceArray(advances: daysSinceLast(lastDate: UserDefaults.standard.object(forKey: "differenceDate") as! NSDate))
+            //print("Advanced by \(daysSinceLast(lastDate: UserDefaults.standard.object(forKey: "differenceDate") as! NSDate))")
+            
             UserDefaults.standard.set(todaysDate, forKey: "saveDate")
+            UserDefaults.standard.set(NSDate(), forKey: "differenceDate")
             print("Next day, advanceing array...")
+            UserDefaults.standard.set(false, forKey: "favorited")
+            
+            advanceStreak()
+            
+        }
+        
+        
+        if UserDefaults.standard.bool(forKey: "favorited") {
+            disableFavoriteButton()
         }
         
         helloLabel.text = "\"\(theArray[0])\""
+        remainingLabel.text = "Remaining Quotes: \(theArray.count)"
+        streakLabel.text = "Quotes viewed: \(UserDefaults.standard.integer(forKey: "streak"))"
         
         let randomColor: [UIColor] = [.redCode1, .liGreenCode1, .liPurpleCode1, .yellowCode1, .tealCode, .darkTealCode1, .pinkCode, .liYellowCode1]
         let randomNumber = Int(arc4random_uniform(8))
@@ -158,9 +185,65 @@ class TodaysQuote: UIViewController {
         return UserDefaults.standard.array(forKey: "archiveArray") as! [String]
     }
     
-    func advanceArray() {
+    func advanceArray(advances: Int) {
         theArray.remove(at: 0)
         UserDefaults.standard.set(theArray, forKey: "saveArray")
+    }
+    
+    func addFavorite(quote: String) {
+        var favArray = UserDefaults.standard.array(forKey: "favArray")
+        favArray?.insert(quote, at: 0)
+        UserDefaults.standard.set(favArray, forKey: "favArray")
+        
+    }
+    
+    func disableFavoriteButton() {
+        favoriteButton.isEnabled = false
+        favoriteButton.setTitle("Favorited", for: .normal)
+        favoriteButton.layer.borderColor = UIColor.green.cgColor
+        favoriteButton.layer.borderWidth = 1
+        UserDefaults.standard.set(true, forKey: "favorited")
+    }
+    
+    func undoFavorite() {
+        favoriteButton.isEnabled = true
+        favoriteButton.setTitle("Favorite", for: .normal)
+        favoriteButton.layer.borderColor = nil
+        favoriteButton.layer.borderWidth = 0
+        UserDefaults.standard.set(false, forKey: "favorited")
+    }
+    
+    func shareQuote(quote: String) {
+        let textToShare = quote
+        
+            let objectsToShare = [textToShare] as [Any]
+            let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+            
+            activityVC.excludedActivityTypes = [UIActivityType.airDrop, UIActivityType.addToReadingList]
+            
+            activityVC.popoverPresentationController?.sourceView = shareButton
+            self.present(activityVC, animated: true, completion: nil)
+    }
+    
+    func advanceStreak() {
+        print("Streak Advnaced")
+        
+        var currentStreak = UserDefaults.standard.integer(forKey: "streak")
+        currentStreak+=1;
+        UserDefaults.standard.set(currentStreak, forKey: "streak")
+    
+        
+    }
+    
+    func daysSinceLast(lastDate: NSDate) -> Int {
+        let calendar = NSCalendar.current
+        
+        let date1 = calendar.startOfDay(for: lastDate as Date)
+        let date2 = calendar.startOfDay(for: NSDate() as Date)
+        
+        let diff = calendar.dateComponents([.day], from: date1, to: date2)
+        
+        return diff.day!;
     }
     
     override func didReceiveMemoryWarning() {
@@ -171,5 +254,36 @@ class TodaysQuote: UIViewController {
     @IBAction func goFavorites(sender:AnyObject) {
         self.performSegue(withIdentifier: "goFavs", sender: self)
     }
+    
+    @IBAction func favoriteButton(sender:AnyObject) {
+        
+        if let currentQuote = helloLabel.text {
+            addFavorite(quote: currentQuote)
+            disableFavoriteButton()
+            
+            let alert = UIAlertController(title: "Favorited", message: "Quote was added to favorites.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+            alert.addAction(defaultAction)
+            let undoAction = UIAlertAction(title: "Undo", style: .destructive, handler: {(alert: UIAlertAction!) in self.undoFavorite()})
+            alert.addAction(undoAction)
+            
+            present(alert, animated: true, completion: nil)
+        }
+        else
+        {
+            let alert = UIAlertController(title: "Error", message: "The quote could not be added to favorites.", preferredStyle: .alert)
+            let defaultAction = UIAlertAction(title: "Dismiss", style: .cancel, handler: nil)
+            alert.addAction(defaultAction)
+            present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func share(sender:AnyObject) {
+        if let currentQuote = helloLabel.text {
+            shareQuote(quote: currentQuote)
+        }
+    }
+
 
 }

@@ -158,9 +158,27 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-9h-WWz">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EtJ-hW-Kzz">
+                                        <frame key="frameInset" minY="3" width="219" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjQ-s9-fy5">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="49" id="CZ3-Uj-L6U"/>
+                                            <constraint firstAttribute="height" constant="31" id="sWF-k0-KER"/>
+                                        </constraints>
+                                        <color key="onTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="thumbTintColor" red="0.78728291889473678" green="0.78728291889473678" blue="0.78728291889473678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </switch>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="JWK-9h-WWz" secondAttribute="height" multiplier="331:28" id="n0F-zP-RrJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="WjQ-s9-fy5" secondAttribute="trailing" constant="8" id="WZh-ya-9vT"/>
+                                    <constraint firstItem="WjQ-s9-fy5" firstAttribute="top" secondItem="JWK-9h-WWz" secondAttribute="top" constant="3" id="YB7-ED-IVU"/>
+                                    <constraint firstAttribute="width" secondItem="JWK-9h-WWz" secondAttribute="height" multiplier="331:28" constant="-106.39285714285711" id="n0F-zP-RrJ"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSx-KN-H7a">
@@ -175,6 +193,9 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         <state key="normal" title="Share">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="shareWithSender:" destination="BLy-hV-k72" eventType="touchUpInside" id="Sqf-cw-5o3"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-VT-Or8">
                                         <color key="backgroundColor" red="0.84705882349999995" green="0.84705882349999995" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -186,6 +207,9 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         <state key="normal" title="Favorite">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="favoriteButtonWithSender:" destination="BLy-hV-k72" eventType="touchUpInside" id="mLm-Jx-op4"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -218,7 +242,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="zVe-Zy-maq" secondAttribute="trailing" id="1Of-yu-ULo"/>
                             <constraint firstItem="BSx-KN-H7a" firstAttribute="top" secondItem="pYq-Wc-jFz" secondAttribute="bottom" constant="18" id="2af-TR-zeF"/>
-                            <constraint firstItem="JWK-9h-WWz" firstAttribute="top" secondItem="Ec3-4H-W8W" secondAttribute="bottom" constant="17" id="9n5-c6-nOf"/>
+                            <constraint firstItem="JWK-9h-WWz" firstAttribute="top" secondItem="Ec3-4H-W8W" secondAttribute="bottom" constant="8" id="9n5-c6-nOf"/>
                             <constraint firstItem="UNg-gK-iM9" firstAttribute="width" secondItem="hCy-UX-T8q" secondAttribute="width" id="C3O-K1-VFE"/>
                             <constraint firstItem="hCy-UX-T8q" firstAttribute="top" secondItem="zVe-Zy-maq" secondAttribute="bottom" id="ELc-yf-2Wk"/>
                             <constraint firstItem="1jb-OC-3Bh" firstAttribute="leading" secondItem="uld-Hn-hRs" secondAttribute="leading" id="Eqh-xJ-FAT"/>
@@ -256,8 +280,10 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <outlet property="favoriteButton" destination="Mbp-VT-Or8" id="fMk-ys-3Do"/>
                         <outlet property="helloLabel" destination="pYq-Wc-jFz" id="lzx-mG-yTk"/>
                         <outlet property="leftButton" destination="hCy-UX-T8q" id="dfS-Om-ta4"/>
+                        <outlet property="remainingLabel" destination="Ec3-4H-W8W" id="RPs-FI-VDO"/>
                         <outlet property="rightButton" destination="UNg-gK-iM9" id="A84-r7-Al5"/>
                         <outlet property="shareButton" destination="f0i-w5-xEc" id="wTt-uq-evb"/>
+                        <outlet property="streakLabel" destination="Ue3-EO-Sse" id="Pgx-G2-mK0"/>
                         <outlet property="topBar" destination="zVe-Zy-maq" id="Oo9-Zg-Yu1"/>
                     </connections>
                 </viewController>
@@ -325,7 +351,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quotes you have liked" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-2s-6bL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe left to remove" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.44999998807907104" translatesAutoresizingMaskIntoConstraints="NO" id="hJf-2s-6bL">
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="hJf-2s-6bL" secondAttribute="height" multiplier="76:7" id="6w8-rr-a2N"/>
                                 </constraints>
@@ -333,8 +359,27 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZd-ze-7QL">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZd-ze-7QL">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favCell" textLabel="Ur6-iw-kY8" rowHeight="101" style="IBUITableViewCellStyleDefault" id="teH-Gg-STX">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="101"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="teH-Gg-STX" id="t0Q-i5-mp1">
+                                            <frame key="frameInset" width="343" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ur6-iw-kY8">
+                                                    <frame key="frameInset" minX="15" width="313" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.16470588235294117" blue="0.21176470588235294" alpha="1" colorSpace="calibratedRGB"/>
@@ -405,7 +450,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                                     </label>
                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LaP-5n-pMl">
                                                         <color key="onTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <color key="thumbTintColor" red="0.60516754887368429" green="0.23079294197377978" blue="0.53029262749370332" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="thumbTintColor" red="0.60392156862745094" green="0.23137254901960785" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <connections>
                                                             <action selector="switchFlip:" destination="BYZ-38-t0r" eventType="valueChanged" id="1lB-Lg-TPf"/>
                                                         </connections>
