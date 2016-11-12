@@ -115,12 +115,18 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="26"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello Sarah, hello Kate, hello Patricia, hello Izzy, hello Camille, hello Anastasia, hello Vicky, hello Gigi, hello soul mate." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="pYq-Wc-jFz">
                                 <rect key="frame" x="44" y="144" width="288" height="270"/>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="44"/>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hCy-UX-T8q">
                                 <rect key="frame" x="0.0" y="65" width="187" height="37"/>
@@ -132,6 +138,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <state key="normal" title="Today's Quote">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                </variation>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNg-gK-iM9">
                                 <rect key="frame" x="188" y="65" width="187" height="37"/>
@@ -143,6 +152,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <state key="normal" title="Favorite Quotes">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                </variation>
                                 <connections>
                                     <action selector="goFavoritesWithSender:" destination="BLy-hV-k72" eventType="touchUpInside" id="e9P-w3-pKJ"/>
                                 </connections>
@@ -162,6 +174,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="35"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining Quotes: 0000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ec3-4H-W8W">
                                 <rect key="frame" x="22" y="569" width="331" height="30"/>
@@ -171,6 +186,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="35"/>
+                                </variation>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-9h-WWz">
                                 <rect key="frame" x="22" y="607" width="331" height="37"/>
@@ -357,6 +375,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <state key="normal" title="Today's Quote">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                </variation>
                                 <connections>
                                     <action selector="goTodayWithSender:" destination="Xec-Ae-qDl" eventType="touchUpInside" id="cIA-iC-wLb"/>
                                 </connections>
@@ -371,6 +392,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <state key="normal" title="Favorite Quotes">
                                     <color key="titleColor" red="0.15686274510000001" green="0.1647058824" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Bold" family="Menlo" pointSize="22"/>
+                                </variation>
                                 <connections>
                                     <action selector="goFavoritesWithSender:" destination="BLy-hV-k72" eventType="touchUpInside" id="c7G-p8-LbJ"/>
                                 </connections>
@@ -388,6 +412,9 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="23"/>
+                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="101" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dZd-ze-7QL">
                                 <rect key="frame" x="16" y="139" width="343" height="490"/>
@@ -398,7 +425,7 @@ Come back here everyday for a new quote. You can also favorite quotes to see or 
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created By Mitchell Sweet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNR-gx-4dS">
-                                <rect key="frame" x="47" y="637" width="280" height="21"/>
+                                <rect key="frame" x="47.5" y="637" width="280" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="d15-ug-mgj"/>
                                     <constraint firstAttribute="height" constant="21" id="oFO-YQ-crc"/>
