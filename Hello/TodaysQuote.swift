@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 extension UIColor {
     class var redCode1: UIColor {
@@ -47,6 +48,7 @@ class TodaysQuote: UIViewController {
     
     @IBOutlet var helloLabel:UILabel!
     @IBOutlet var notificationToggle:UISwitch!
+    @IBOutlet var notificationLabel:UILabel!
     @IBOutlet var dateLabel:UILabel!
     @IBOutlet var topBar:UIView!
     @IBOutlet var favoriteButton:UIButton!
@@ -60,6 +62,44 @@ class TodaysQuote: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //Uncomment to add notification feature**
+        /*
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization
+            
+            
+        }
+       */
+        
+
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            
+            if settings.authorizationStatus == UNAuthorizationStatus.denied {
+               self.notificationLabel.text = "Notifications Disabled"
+               self.notificationToggle.isHidden = true
+               print("Notifications not authorized.")
+            }
+            else if settings.authorizationStatus == UNAuthorizationStatus.authorized {
+                print("Notifications authorized")
+            }
+            else if settings.authorizationStatus == UNAuthorizationStatus.notDetermined {
+                self.notificationLabel.isHidden = true
+                self.notificationToggle.isHidden = true
+                print("Notification Error")
+            }
+            
+        }
+        
+        if UserDefaults.standard.bool(forKey: "Notifications") {
+            notificationToggle.isOn = true
+        }
+        else
+        {
+            notificationToggle.isOn = false
+        }
 
         
         let date = NSDate()
@@ -300,6 +340,41 @@ class TodaysQuote: UIViewController {
             shareQuote(quote: currentQuote)
         }
     }
-
+    
+    @IBAction func notifications(sender:UISwitch) {
+        
+        if sender.isOn {
+            let center = UNUserNotificationCenter.current()
+            
+            let content = UNMutableNotificationContent()
+            content.title = "Hello!"
+            content.subtitle = "Today's hello quote:"
+            content.body = "\"\(theArray[0])\"";
+            content.categoryIdentifier = "Notification"
+            content.sound = UNNotificationSound.default()
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 120, repeats: true)
+            
+            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            center.add(request)
+            print("Notifications Triggered")
+            
+            UserDefaults.standard .set(true, forKey: "Notifications")
+            
+            
+        }
+        else {
+            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+            print("Notifications cancled")
+            
+            UserDefaults.standard.set(false, forKey: "Notifications")
+        }
+        
+    }
+    
+    func getPendingNotificationRequests(completionHandler: @escaping ([UNNotificationRequest]) -> Void)  {
+        
+    }
+    
 
 }

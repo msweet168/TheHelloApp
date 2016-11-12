@@ -25,7 +25,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="NyB-em-pEW">
                                 <rect key="frame" x="28" y="150" width="319" height="367"/>
-                                <string key="text">Technology is amazing. Hello Quotes show all the extraordinary things that it does to change our lives. 
+                                <string key="text">Technology is amazing. Hello Quotes show all the ways it changes our lives.
 
 Come back here everyday for a new quote or turn on notifications to see your new quote on your lock screen each morning. </string>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
@@ -182,7 +182,7 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WjQ-s9-fy5">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WjQ-s9-fy5">
                                         <rect key="frame" x="274" y="3" width="51" height="31"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="49" id="CZ3-Uj-L6U"/>
@@ -190,6 +190,9 @@ Come back here everyday for a new quote or turn on notifications to see your new
                                         </constraints>
                                         <color key="onTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <color key="thumbTintColor" red="0.78728291889473678" green="0.78728291889473678" blue="0.78728291889473678" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="notificationsWithSender:" destination="BLy-hV-k72" eventType="valueChanged" id="HJJ-wm-Whx"/>
+                                        </connections>
                                     </switch>
                                 </subviews>
                                 <constraints>
@@ -300,6 +303,8 @@ Come back here everyday for a new quote or turn on notifications to see your new
                         <outlet property="favoriteButton" destination="Mbp-VT-Or8" id="fMk-ys-3Do"/>
                         <outlet property="helloLabel" destination="pYq-Wc-jFz" id="lzx-mG-yTk"/>
                         <outlet property="leftButton" destination="hCy-UX-T8q" id="dfS-Om-ta4"/>
+                        <outlet property="notificationLabel" destination="EtJ-hW-Kzz" id="APz-ki-KKO"/>
+                        <outlet property="notificationToggle" destination="WjQ-s9-fy5" id="sH5-WX-arE"/>
                         <outlet property="remainingLabel" destination="Ec3-4H-W8W" id="RPs-FI-VDO"/>
                         <outlet property="rightButton" destination="UNg-gK-iM9" id="A84-r7-Al5"/>
                         <outlet property="shareButton" destination="f0i-w5-xEc" id="wTt-uq-evb"/>
