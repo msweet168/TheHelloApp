@@ -62,7 +62,7 @@ class TodaysQuote: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+
         
         //Uncomment to add notification feature**
         /*
